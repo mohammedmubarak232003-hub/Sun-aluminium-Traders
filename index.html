@@ -27,8 +27,6 @@
         
         body { 
             background-color: var(--bg); 
-            /* Subtle, elegant dynamic green geometric line pattern in the background */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm56-76c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm74-26c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM49 84c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-24-56c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm60-1c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM15 53c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm52-4c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-25 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm23 20c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%2312372a' fill-opacity='0.03' fill-rule='evenodd'/%3E");
             color: var(--text); 
             line-height: 1.6; 
         }
@@ -59,7 +57,7 @@
 
         /* Parallax Hero Section */
         .hero {
-            background: linear-gradient(rgba(18, 55, 42, 0.75), rgba(18, 55, 42, 0.75)), url('project1.jpg');
+            background: linear-gradient(rgba(18, 55, 42, 0.75), rgba(18, 55, 42, 0.75)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -100,8 +98,36 @@
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4); 
         }
 
-        /* General Section Styling */
-        .section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        /* General Section Styling with Dynamic Building Background Overlays */
+        .section { 
+            padding: 80px 20px; 
+            position: relative;
+        }
+
+        /* Wrapper to constrain layout size inside the full-bleed background */
+        .section-container {
+            max-width: 1200px; 
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Architectural background for the Services section */
+        #services {
+            background: linear-gradient(rgba(247, 249, 246, 0.92), rgba(247, 249, 246, 0.92)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Architectural background for the Projects section */
+        #projects {
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
         .section h2 { 
             text-align: center; 
             font-size: 2.5rem; 
@@ -119,14 +145,15 @@
             border-radius: 2px;
         }
 
-        /* Floating Services Cards */
+        /* Floating Glassmorphic Services Cards */
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
         .card {
-            background: rgba(255, 255, 255, 0.9); /* Slightly glassy background white */
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.85); /* Glass opacity */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             padding: 30px 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(18, 55, 42, 0.04);
+            box-shadow: 0 4px 15px rgba(18, 55, 42, 0.05);
             text-align: center;
             font-weight: 600;
             color: var(--primary);
@@ -146,6 +173,7 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(18, 55, 42, 0.08);
+            background: var(--white);
         }
         .gallery-item img {
             width: 100%;
@@ -193,6 +221,8 @@
             .hero h1 { font-size: 2.8rem; }
             nav { gap: 15px; padding: 15px 10px; flex-wrap: wrap; }
             nav a { font-size: 0.9rem; }
+            /* Turn off fixed parallax behavior on mobile for smoother scrolling performance */
+            #services, #projects, .hero { background-attachment: scroll; }
         }
     </style>
 </head>
@@ -215,36 +245,42 @@
     </section>
 
     <section id="about" class="section">
-        <h2>About Us</h2>
-        <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: auto;">
-            Sun Aluminium Traders provides premium aluminium fabrication, Domal windows, Jindal partitions, glazing solutions, PVC doors, WPC doors, cupboards and commercial interior solutions for residential and commercial projects across Tamil Nadu.
-        </p>
+        <div class="section-container">
+            <h2>About Us</h2>
+            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: auto;">
+                Sun Aluminium Traders provides premium aluminium fabrication, Domal windows, Jindal partitions, glazing solutions, PVC doors, WPC doors, cupboards and commercial interior solutions for residential and commercial projects across Tamil Nadu.
+            </p>
+        </div>
     </section>
 
     <section id="services" class="section">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="card">Stick Glazing</div>
-            <div class="card">Jindal Partitions</div>
-            <div class="card">Domal Windows</div>
-            <div class="card">Aluminium Windows</div>
-            <div class="card">Glass Partitions</div>
-            <div class="card">WPC Doors</div>
-            <div class="card">Solid PVC Doors</div>
-            <div class="card">PVC Doors</div>
-            <div class="card">Wooden Doors</div>
-            <div class="card">PVC Cupboards</div>
+        <div class="section-container">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="card">Stick Glazing</div>
+                <div class="card">Jindal Partitions</div>
+                <div class="card">Domal Windows</div>
+                <div class="card">Aluminium Windows</div>
+                <div class="card">Glass Partitions</div>
+                <div class="card">WPC Doors</div>
+                <div class="card">Solid PVC Doors</div>
+                <div class="card">PVC Doors</div>
+                <div class="card">Wooden Doors</div>
+                <div class="card">PVC Cupboards</div>
+            </div>
         </div>
     </section>
 
     <section id="projects" class="section">
-        <h2>Recent Projects</h2>
-        <div class="gallery">
-            <div class="gallery-item"><img src="project1.jpg" alt="Aluminium Fabrication Project 1"></div>
-            <div class="gallery-item"><img src="project2.jpg" alt="Aluminium Fabrication Project 2"></div>
-            <div class="gallery-item"><img src="project3.jpg" alt="Aluminium Fabrication Project 3"></div>
-            <div class="gallery-item"><img src="project4.jpg" alt="Aluminium Fabrication Project 4"></div>
-            <div class="gallery-item"><img src="project5.jpg" alt="Aluminium Fabrication Project 5"></div>
+        <div class="section-container">
+            <h2>Recent Projects</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="project1.jpg" alt="Aluminium Fabrication Project 1"></div>
+                <div class="gallery-item"><img src="project2.jpg" alt="Aluminium Fabrication Project 2"></div>
+                <div class="gallery-item"><img src="project3.jpg" alt="Aluminium Fabrication Project 3"></div>
+                <div class="gallery-item"><img src="project4.jpg" alt="Aluminium Fabrication Project 4"></div>
+                <div class="gallery-item"><img src="project5.jpg" alt="Aluminium Fabrication Project 5"></div>
+            </div>
         </div>
     </section>
 
