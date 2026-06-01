@@ -27,7 +27,7 @@
         
         body { 
             background-color: var(--bg); 
-            /* Soft premium blueprint/architectural building layout background */
+            /* Premium structural architectural framing layout background */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h30v30H0zm30 30h30v30H30z' fill='%2312372a' fill-opacity='0.02'/%3E%3Cpath d='M0 0h60v1H0zm0 10h60v1H0zm0 10h60v1H0zm0 10h60v1H0zm0 10h60v1H0zm0 10h60v1H0zM0 0v60h1V0zm10 0v60h1V0zm10 0v60h1V0zm10 0v60h1V0zm10 0v60h1V0zm10 0v60h1V0z' fill='%2312372a' fill-opacity='0.015'/%3E%3C/svg%3E");
             color: var(--text); 
             line-height: 1.6; 
@@ -159,25 +159,50 @@
             font-size: 1rem;
         }
 
-        /* Floating Services Cards */
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        /* Enhanced Services Cards with Visual Thumbnails */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
         .card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(5px);
-            padding: 30px 20px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(18, 55, 42, 0.04);
             text-align: center;
-            font-weight: 600;
-            color: var(--primary);
             transition: all 0.3s ease;
             border: 1px solid rgba(18, 55, 42, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .card-thumb {
+            width: 100%;
+            height: 140px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e8ede9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .card-title {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.05rem;
         }
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 25px rgba(18, 55, 42, 0.12);
-            border-color: var(--accent);
-            background-color: var(--white);
+            border-color: var(--light-accent);
+        }
+        .card:hover .card-thumb img {
+            transform: scale(1.1);
         }
 
         /* Interactive Gallery */
@@ -277,16 +302,67 @@
     <section id="services" class="section">
         <h2>Our Services</h2>
         <div class="services">
-            <div class="card">Stick Glazing</div>
-            <div class="card">Jindal Partitions</div>
-            <div class="card">Domal Windows</div>
-            <div class="card">Aluminium Windows</div>
-            <div class="card">Glass Partitions</div>
-            <div class="card">WPC Doors</div>
-            <div class="card">Solid PVC Doors</div>
-            <div class="card">PVC Doors</div>
-            <div class="card">Wooden Doors</div>
-            <div class="card">PVC Cupboards</div>
+            
+            <!-- Stick Glazing -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400" alt="Stick Glazing"></div>
+                <div class="card-title">Stick Glazing</div>
+            </div>
+
+            <!-- Jindal Partitions -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400" alt="Jindal Partitions"></div>
+                <div class="card-title">Jindal Partitions</div>
+            </div>
+
+            <!-- Domal Windows -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=400" alt="Domal Windows"></div>
+                <div class="card-title">Domal Windows</div>
+            </div>
+
+            <!-- Aluminium Windows -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400" alt="Aluminium Windows"></div>
+                <div class="card-title">Aluminium Windows</div>
+            </div>
+
+            <!-- Glass Partitions -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=400" alt="Glass Partitions"></div>
+                <div class="card-title">Glass Partitions</div>
+            </div>
+
+            <!-- WPC Doors -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=400" alt="WPC Doors"></div>
+                <div class="card-title">WPC Doors</div>
+            </div>
+
+            <!-- Solid PVC Doors -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400" alt="Solid PVC Doors"></div>
+                <div class="card-title">Solid PVC Doors</div>
+            </div>
+
+            <!-- PVC Doors -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5db?q=80&w=400" alt="PVC Doors"></div>
+                <div class="card-title">PVC Doors</div>
+            </div>
+
+            <!-- Wooden Doors -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?q=80&w=400" alt="Wooden Doors"></div>
+                <div class="card-title">Wooden Doors</div>
+            </div>
+
+            <!-- PVC Cupboards -->
+            <div class="card">
+                <div class="card-thumb"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=400" alt="PVC Cupboards"></div>
+                <div class="card-title">PVC Cupboards</div>
+            </div>
+
         </div>
     </section>
 
