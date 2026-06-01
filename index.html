@@ -1,192 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sun Aluminium Traders</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Aluminium Traders</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f8f9fa; color: #333; }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #111827;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #25D366; }
 
-body{
-background:#f8f9fa;
-color:#333;
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('project1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 20px; }
+        .btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); }
 
-.hero{
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url('project1.jpg');
-background-size:cover;
-background-position:center;
-height:80vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
-}
+        /* Sections & Cards */
+        .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+        .section h2 { text-align: center; margin-bottom: 30px; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-weight: bold;
+        }
 
-.hero h1{
-font-size:3rem;
-margin-bottom:10px;
-}
+        /* Gallery */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
 
-.hero p{
-font-size:1.2rem;
-margin-bottom:20px;
-}
-
-.btn{
-display:inline-block;
-background:#25D366;
-color:white;
-padding:12px 24px;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
-}
-
-.section{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:30px;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-text-align:center;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-}
-
-.gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.contact{
-background:#1f2937;
-color:white;
-padding:50px 20px;
-}
-
-.contact p{
-margin:10px 0;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 18px;
-border-radius:50%;
-text-decoration:none;
-font-size:24px;
-}
-
-footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:15px;
-}
-</style>
+        /* Contact & Maps Section */
+        .contact { background: #1f2937; color: white; padding: 50px 20px; text-align: center; }
+        .contact p { margin: 10px 0; font-size: 1.1rem; }
+        .map-container { margin-top: 30px; display: flex; justify-content: center; }
+        
+        /* Floating WhatsApp Button */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 18px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1001;
+            transition: transform 0.2s;
+        }
+        .whatsapp:hover { transform: scale(1.1); }
+        
+        footer { background: #111827; color: white; text-align: center; padding: 15px; }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
-<div>
-<h1>Sun Aluminium Traders</h1>
-<p>17+ Years of Excellence in Aluminium & Glass Solutions</p>
-<a href="https://wa.me/919444688530" class="btn">Get Free Quote</a>
-</div>
-</section>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-<section class="section">
-<h2>About Us</h2>
-<p style="text-align:center;">
-Sun Aluminium Traders provides premium aluminium fabrication,
-Domal windows, Jindal partitions, glazing solutions,
-PVC doors, WPC doors, cupboards and commercial interior solutions
-for residential and commercial projects across Tamil Nadu.
-</p>
-</section>
+    <section id="home" class="hero">
+        <div>
+            <h1>Sun Aluminium Traders</h1>
+            <p>17+ Years of Excellence in Aluminium & Glass Solutions</p>
+            <a href="https://wa.me/919444688530" class="btn" target="_blank">Get a Free Quote</a>
+        </div>
+    </section>
 
-<section class="section">
-<h2>Our Services</h2>
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p style="text-align: center; line-height: 1.6;">
+            Sun Aluminium Traders provides premium aluminium fabrication, Domal windows, Jindal partitions, glazing solutions, PVC doors, WPC doors, cupboards and commercial interior solutions for residential and commercial projects across Tamil Nadu.
+        </p>
+    </section>
 
-<div class="services">
-<div class="card">Stick Glazing</div>
-<div class="card">Jindal Partitions</div>
-<div class="card">Domal Windows</div>
-<div class="card">Aluminium Windows</div>
-<div class="card">Glass Partitions</div>
-<div class="card">WPC Doors</div>
-<div class="card">Solid PVC Doors</div>
-<div class="card">PVC Doors</div>
-<div class="card">Wooden Doors</div>
-<div class="card">PVC Cupboards</div>
-</div>
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="card">Stick Glazing</div>
+            <div class="card">Jindal Partitions</div>
+            <div class="card">Domal Windows</div>
+            <div class="card">Aluminium Windows</div>
+            <div class="card">Glass Partitions</div>
+            <div class="card">WPC Doors</div>
+            <div class="card">Solid PVC Doors</div>
+            <div class="card">PVC Doors</div>
+            <div class="card">Wooden Doors</div>
+            <div class="card">PVC Cupboards</div>
+        </div>
+    </section>
 
-</section>
+    <section id="projects" class="section">
+        <h2>Recent Projects</h2>
+        <div class="gallery">
+            <img src="project1.jpg" alt="Aluminium Fabrication Project 1">
+            <img src="project2.jpg" alt="Aluminium Fabrication Project 2">
+            <img src="project3.jpg" alt="Aluminium Fabrication Project 3">
+            <img src="project4.jpg" alt="Aluminium Fabrication Project 4">
+            <img src="project5.jpg" alt="Aluminium Fabrication Project 5">
+        </div>
+    </section>
 
-<section class="section">
-<h2>Recent Projects</h2>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>📞 9444688530 | 📞 7358196674</p>
+        <p>📧 sunaluminiumtraders@gmail.com</p>
+        <p>📍 East Coast Rd, Near Sumathi Theatre, Nenmeli, Sriperumbudur, Tamil Nadu 602105</p>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8926958614486!2d79.96917637507663!3d12.97871328733737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528cd59a0f443b%3A0xc3c5cb637b8d4c2b!2sSumathi%20Theatre!5e0!3m2!1sen!2sin!4v1717400000000!5m2!1sen!2sin" width="100%" height="300" style="border:0; border-radius: 10px; max-width: 800px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
 
-<div class="gallery">
-<img src="project1.jpg" alt="">
-<img src="project2.jpg" alt="">
-<img src="project3.jpg" alt="">
-<img src="project4.jpg" alt="">
-<img src="project5.jpg" alt="">
-</div>
+    <a class="whatsapp" href="https://wa.me/919444688530" target="_blank" title="Chat with us on WhatsApp">💬</a>
 
-</section>
-
-<section class="contact">
-<h2>Contact Us</h2>
-
-<p>📞 9444688530</p>
-<p>📞 7358196674</p>
-<p>📧 sunaluminiumtraders@gmail.com</p>
-<p>📍 East Coast Rd, Near Sumathi Theatre, Nenmeli, Sriperumbudur, Tamil Nadu 602105</p>
-
-</section>
-
-<a class="whatsapp" href="https://wa.me/919444688530">💬</a>
-
-<footer>
-© 2026 Sun Aluminium Traders. All Rights Reserved.
-</footer>
+    <footer>
+        © 2026 Sun Aluminium Traders. All Rights Reserved.
+    </footer>
 
 </body>
 </html>
