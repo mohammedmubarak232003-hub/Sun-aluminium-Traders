@@ -4,70 +4,146 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sun Aluminium Traders</title>
+
 <style>
-body{
-font-family:Arial,sans-serif;
+*{
 margin:0;
 padding:0;
-line-height:1.6;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
-header{
-background:#1f2937;
-color:white;
-padding:60px 20px;
+
+body{
+background:#f8f9fa;
+color:#333;
+}
+
+.hero{
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('project1.jpg');
+background-size:cover;
+background-position:center;
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+color:white;
+padding:20px;
 }
+
+.hero h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-bottom:20px;
+}
+
 .btn{
+display:inline-block;
 background:#25D366;
 color:white;
-padding:12px 20px;
+padding:12px 24px;
 text-decoration:none;
 border-radius:5px;
-display:inline-block;
-margin-top:10px;
+font-weight:bold;
 }
-section{
-padding:40px 20px;
+
+.section{
+padding:60px 20px;
 max-width:1200px;
 margin:auto;
 }
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+}
+
 .services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:15px;
 }
-.card{
-background:#f4f4f4;
-padding:20px;
-border-radius:8px;
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
 }
+
+.contact{
+background:#1f2937;
+color:white;
+padding:50px 20px;
+}
+
+.contact p{
+margin:10px 0;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+text-decoration:none;
+font-size:24px;
+}
+
 footer{
 background:#111827;
 color:white;
 text-align:center;
-padding:20px;
+padding:15px;
 }
 </style>
 </head>
+
 <body>
 
-<header>
+<section class="hero">
+<div>
 <h1>Sun Aluminium Traders</h1>
-<p>17+ Years of Experience in Aluminium & Glass Solutions</p>
-<a class="btn" href="https://wa.me/919444688530">WhatsApp Us</a>
-</header>
+<p>17+ Years of Excellence in Aluminium & Glass Solutions</p>
+<a href="https://wa.me/919444688530" class="btn">Get Free Quote</a>
+</div>
+</section>
 
-<section>
+<section class="section">
 <h2>About Us</h2>
-<p>
-Sun Aluminium Traders provides professional aluminium fabrication,
-glass partitions, Domal windows, Jindal partitions, WPC doors,
-PVC doors and commercial glazing solutions.
+<p style="text-align:center;">
+Sun Aluminium Traders provides premium aluminium fabrication,
+Domal windows, Jindal partitions, glazing solutions,
+PVC doors, WPC doors, cupboards and commercial interior solutions
+for residential and commercial projects across Tamil Nadu.
 </p>
 </section>
 
-<section>
+<section class="section">
 <h2>Our Services</h2>
+
 <div class="services">
 <div class="card">Stick Glazing</div>
 <div class="card">Jindal Partitions</div>
@@ -80,15 +156,33 @@ PVC doors and commercial glazing solutions.
 <div class="card">Wooden Doors</div>
 <div class="card">PVC Cupboards</div>
 </div>
+
 </section>
 
-<section>
-<h2>Contact Us</h2>
-<p><b>Phone:</b> 9444688530</p>
-<p><b>Phone:</b> 7358196674</p>
-<p><b>Email:</b> sunaluminiumtraders@gmail.com</p>
-<p><b>Address:</b> East Coast Rd, Near Sumathi Theatre, Nenmeli, Sriperumbudur, Tamil Nadu 602105</p>
+<section class="section">
+<h2>Recent Projects</h2>
+
+<div class="gallery">
+<img src="project1.jpg" alt="">
+<img src="project2.jpg" alt="">
+<img src="project3.jpg" alt="">
+<img src="project4.jpg" alt="">
+<img src="project5.jpg" alt="">
+</div>
+
 </section>
+
+<section class="contact">
+<h2>Contact Us</h2>
+
+<p>📞 9444688530</p>
+<p>📞 7358196674</p>
+<p>📧 sunaluminiumtraders@gmail.com</p>
+<p>📍 East Coast Rd, Near Sumathi Theatre, Nenmeli, Sriperumbudur, Tamil Nadu 602105</p>
+
+</section>
+
+<a class="whatsapp" href="https://wa.me/919444688530">💬</a>
 
 <footer>
 © 2026 Sun Aluminium Traders. All Rights Reserved.
