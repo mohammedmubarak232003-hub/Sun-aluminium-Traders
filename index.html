@@ -11,8 +11,8 @@
             --primary: #12372a;   /* Deep Forest Green */
             --accent: #436850;    /* Sage / Leaf Green */
             --light-accent: #adbc9f; /* Soft Mint Green for highlights */
-            --bg: #fbfada;        /* Crisp, warm off-white background */
-            --text: #2c3e35;      /* Deep forest dark text for premium readability */
+            --bg: #f7f9f6;        /* Clean white background with a tiny splash of mint */
+            --text: #2c3e35;      /* Deep forest dark text */
             --white: #ffffff;
         }
         
@@ -23,12 +23,19 @@
             font-family: 'Poppins', sans-serif; 
         }
         
-        html { scroll-behavior: smooth; } /* Smooth scrolling for nav links */
-        body { background: var(--bg); color: var(--text); line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            background-color: var(--bg); 
+            /* Subtle, elegant dynamic green geometric line pattern in the background */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm56-76c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm74-26c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM49 84c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-24-56c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm60-1c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM15 53c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm52-4c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-25 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm23 20c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%2312372a' fill-opacity='0.03' fill-rule='evenodd'/%3E");
+            color: var(--text); 
+            line-height: 1.6; 
+        }
 
         /* Sleek Sticky Navigation Bar */
         nav {
-            background: rgba(18, 55, 42, 0.95); /* Semi-transparent Forest Green */
+            background: rgba(18, 55, 42, 0.95);
             backdrop-filter: blur(10px);
             padding: 18px 0;
             position: sticky;
@@ -55,7 +62,7 @@
             background: linear-gradient(rgba(18, 55, 42, 0.75), rgba(18, 55, 42, 0.75)), url('project1.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Creates the Parallax effect */
+            background-attachment: fixed;
             height: 85vh;
             display: flex;
             align-items: center;
@@ -102,7 +109,6 @@
             margin-bottom: 50px; 
             position: relative;
         }
-        /* Underline decoration for headings */
         .section h2::after {
             content: '';
             width: 70px;
@@ -116,21 +122,21 @@
         /* Floating Services Cards */
         .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
         .card {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.9); /* Slightly glassy background white */
+            backdrop-filter: blur(5px);
             padding: 30px 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(18, 55, 42, 0.05);
+            box-shadow: 0 4px 15px rgba(18, 55, 42, 0.04);
             text-align: center;
             font-weight: 600;
             color: var(--primary);
             transition: all 0.3s ease;
-            border-bottom: 4px solid transparent;
-            border: 1px solid rgba(18, 55, 42, 0.05);
+            border: 1px solid rgba(18, 55, 42, 0.08);
         }
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(18, 55, 42, 0.1);
-            border-bottom: 4px solid var(--accent);
+            box-shadow: 0 15px 25px rgba(18, 55, 42, 0.12);
+            border-color: var(--accent);
             background-color: var(--white);
         }
 
@@ -138,7 +144,7 @@
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .gallery-item {
             border-radius: 12px;
-            overflow: hidden; /* Keeps zoomed image inside the box */
+            overflow: hidden;
             box-shadow: 0 4px 15px rgba(18, 55, 42, 0.08);
         }
         .gallery-item img {
@@ -146,7 +152,7 @@
             height: 260px;
             object-fit: cover;
             display: block;
-            transition: transform 0.5s ease; /* Smooth zoom animation */
+            transition: transform 0.5s ease;
         }
         .gallery-item:hover img { transform: scale(1.1); }
 
