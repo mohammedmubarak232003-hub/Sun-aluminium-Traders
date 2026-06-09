@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Sun Aluminium Traders</title>
+
+<style>
+body{
+    font-family:Poppins,sans-serif;
+    background:#f7f9f6;
+    margin:0;
+}
+
+header{
+    background:#12372a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.container{
+    max-width:700px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+input,textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+button{
+    background:#436850;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    color:#12372a;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Sun Aluminium Traders</h1>
+</header>
+
+<div class="container">
+
+    <h2>Request a Free Quote</h2>
+
+    <form action="https://formsubmit.co/sunaluminiumtraders@gmail.com" method="POST">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+        <input type="text" name="product" placeholder="Product Required">
+
+        <textarea name="message" rows="5" placeholder="Your Requirement" required></textarea>
+
+        <input type="hidden" name="_captcha" value="false">
+
+        <button type="submit">Send Enquiry</button>
+
+    </form>
+
+    <a href="index.html" class="back">← Back to Home</a>
+
+</div>
+
+</body>
+</html>
